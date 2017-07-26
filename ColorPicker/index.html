@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <title>ColorPicker颜色选择器演示程序</title>
+  <style>
+body, blockquote { margin: 0; padding: 0; font-size: 12px; font-family: "微软雅黑", Verdana, Arial }
+#container { width: 900px; margin: 0 auto; }
+#image { margin-bottom: 10px; }
+blockquote { margin: 10px 0; padding: 0; }
+pre { margin: 0; padding: 0; border: 1px solid #ccc; margin-top: 10px; padding-left: 5px; }
+</style>
+ </head>
+  <body>
+<div id="container"> 
+ <h2>ColorPicker颜色选择器演示</h2>
+ <blockquote> <font color="blue">外部点击触发：</font><br />
+    请输入颜色值：
+    <input type="text" id="cp3text" value="这里是测试的文字"/>
+    <img src="colorpicker.png" id="cp3" style="cursor:pointer"/>
+    <pre>
+  $("#cp3").colorpicker({
+    fillcolor:true,
+    success:function(o,color){
+        $("#cp3text").css("color",color);
+    }
+});</pre>
+  </blockquote>
+ </div>
+<script type="text/javascript" src="jquery.js"></script> 
+<script type="text/javascript" src="jquery.colorpicker.js"></script>
+<script type="text/javascript">
+   $(function(){
+        $("#cp3").colorpicker({
+            fillcolor:true,
+            success:function(o,color){
+                $("#cp3text").css("color",color);
+            }
+        });
+    });
+</script>
+</body>
+</html>
