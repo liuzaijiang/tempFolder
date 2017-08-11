@@ -64,13 +64,9 @@
 			})
             var colorTable = '';
             var colorValue = '';
-            for (i = 0; i < 2; i++) {
+            /*for (i = 0; i < 2; i++) {
                 for (j = 0; j < 6; j++) {
                     colorTable = colorTable + '<tr height=12>'
-                    colorTable = colorTable + '<td width=11 rel="#000000" style="background-color:#000000">'
-                    colorValue = i == 0 ? ColorHex[j] + ColorHex[j] + ColorHex[j] : SpColorHex[j];
-                    colorTable = colorTable + '<td width=11 rel="#' + colorValue + '" style="background-color:#' + colorValue + '">'
-                    colorTable = colorTable + '<td width=11 rel="#000000" style="background-color:#000000">'
                     for (k = 0; k < 3; k++) {
                         for (l = 0; l < 6; l++) {
                             colorValue = ColorHex[k + i * 3] + ColorHex[l] + ColorHex[j];
@@ -78,14 +74,21 @@
                         }
                     }
                 }
+            }*/
+			for (i = 0; i < 5; i++) {            
+                colorTable = colorTable + '<tr height=24>'
+                   for (l = 0; l < 8; l++) {
+                        colorValue = "000000"
+                        colorTable = colorTable + '<td width=24 rel="#' + colorValue + '" style="background-color:#' + colorValue + ';border:2px solid white">'
+                    }
             }
-            colorTable = '<table width=253 border="0" cellspacing="0" cellpadding="0" style="border:1px solid #000;">'
+            colorTable = '<table width=210 border="0" cellspacing="0" cellpadding="0" style="border:1px solid #000;">'
             + '<tr height=30><td colspan=21 bgcolor=#cccccc>'
             + '<table cellpadding="0" cellspacing="1" border="0" style="border-collapse: collapse">'
             + '<tr><td width="3"><td><input type="text" id="DisColor" size="6" disabled style="border:solid 1px #000000;background-color:#ffff00"></td>'
             + '<td width="3"><td><input type="text" id="HexColor" size="7" style="border:inset 1px;font-family:Arial;" value="#000000" readOnly="true">'
 			+ '<a href="javascript:void(0);" id="_cclose">关闭</a> </td></tr></table></td></table>'
-            + '<table id="CT" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="000000"  style="cursor:pointer;">'
+            + '<table  width=210 id="CT" border="1" cellspacing="0" cellpadding="0"    style="cursor:pointer; border:1px solid black">'
             + colorTable + '</table>';
             $("#colorpanel").html(colorTable);
             //#region 判断使用的jquery版本，如果是1.8版本之后的使用on方法，如果是之前的使用live方法
